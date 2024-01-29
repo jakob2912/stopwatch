@@ -45,7 +45,7 @@ function reset() {
   startTime = 0;
   elapsedTime = 0;
   isRunning = false;
-  displayElem.textContent = '00:00:00:00'
+  displayElem.textContent = '00:00'
 }
 
 function update() {
@@ -59,13 +59,21 @@ function update() {
   let seconds = Math.floor((elapsedTime / 1000) % 60);
   let milliseconds = Math.floor((elapsedTime % 1000) / 10);
 
+  
+
   //Convert time into a string with padding
-  hours = String(hours).padStart(2, 0);
-  minutes = String(minutes).padStart(2, 0);
   seconds = String(seconds).padStart(2, 0);
   milliseconds = String(milliseconds).padStart(2, 0);
 
 
   //Change the displayed time on the page
-  displayElem.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+  if (hours > 0) {
+    hours = String(hours).padStart(2, 0);
+    displayElem.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+  } else if (minutes > 0) {
+    minutes = String(minutes).padStart(2, 0);
+    displayElem.textContent = `${minutes}:${seconds}:${milliseconds}`;
+  } else {
+    displayElem.textContent = `${seconds}:${milliseconds}`;
+  }
 }

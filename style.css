@@ -18,7 +18,7 @@ body {
 }
 
 main {
-  margin-bottom: 50vh;
+  margin-bottom: 55vh;
 }
 
 #container {
@@ -74,4 +74,15 @@ main {
 
 #reset-btn:hover {
   background-color: #0018F9;
+}
+
+.credits a{
+  text-decoration: none;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.credits a:hover {
+  color: #000000;
+  text-decoration: underline;
 }
