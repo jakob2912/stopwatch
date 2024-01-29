@@ -76,6 +76,14 @@ main {
   background-color: #0018F9;
 }
 
+.credits {
+  display: flex;
+  color: #8f8f8f;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
 .credits a{
   text-decoration: none;
   color: #ccc;
